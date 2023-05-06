@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.AnApp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d" 
+              Height="335" Width="210" Margin="7,7,7,7" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Name="ProductImage" MouseUp="ProductImage_MouseUp" 
+               Source="/Images/001-mail inbox app.png"/>
+        <Grid Name="ButtomGrid"
+              Grid.Row="1" Grid.Column="1"
+              Background="#1F1F1F"
+              MouseUp="ProductImage_MouseUp">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*" />
+            <RowDefinition Height="0.25*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Name="AppNameText"
+                       Grid.Row="0" Grid.Column="0"
+                       VerticalAlignment="Top"
+                       FontSize="26"
+                       Foreground="White"
+                       Text="Zoom Rooms"
+                       Margin="2"
+             />
+            <TextBlock Name="AppPriceText"
+                       Grid.Row="1" Grid.Column="1"
+                       VerticalAlignment="Bottom"
+                       FontSize="20"
+                       Foreground="White"
+                       Text="Free"
+                       Margin="2"
+             />
+        </Grid>
+    </Grid>
+</UserControl>

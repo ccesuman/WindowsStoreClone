@@ -1,0 +1,58 @@
+﻿<Page x:Class="WindowsStoreClone.Pages.AppDetails"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WindowsStoreClone.Pages"
+      xmlns:uc="clr-namespace:WindowsStoreClone.UserControls"
+      xmlns:ucappdet="clr-namespace:WindowsStoreClone.UserControls.AppDetailsTabContent"
+      xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AppDetails">
+
+    <ScrollViewer Name="AppDetailsSV"
+                   HorizontalScrollBarVisibility="Hidden"
+                   VerticalScrollBarVisibility="Hidden"
+                   Background="#2e2e2e">
+        <StackPanel Name="AppDetailsPageMainStackPanel"
+                    Orientation="Vertical"
+                    Width="{Binding ElementName=AppDetailsSV,Path=ActualWidth}"
+                    Background="#2e2e2e"
+                    Margin="0,0,0,15"
+                    >
+            <uc:AppDetailsTitleAndBackground x:Name="AppDetailsTitleAndBackgroundUC" />
+            <Grid Name="Tabs">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.70*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <mah:MetroAnimatedSingleRowTabControl
+                    Name="AppDetailsTabControl"
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    >
+                    <TabItem Header="Overview">
+
+                        <ucappdet:Overview x:Name="OverviewTabUC"></ucappdet:Overview>
+                        
+                    </TabItem>
+                    <TabItem Header="System Requirements">
+
+                        <ucappdet:SystemRequirement />
+                    </TabItem>
+                    <TabItem Header="Reviews">
+                        <ucappdet:Reviews></ucappdet:Reviews>
+
+                    </TabItem>
+                    <TabItem Header="Related">
+                        <ucappdet:Related ></ucappdet:Related>
+                        
+                    </TabItem>
+                    
+                </mah:MetroAnimatedSingleRowTabControl>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB78CA3F-DC2F-4CCC-8046-7F2CACC766DE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsStoreClone</RootNamespace>
+    <AssemblyName>WindowsStoreClone</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.4.3\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MiscUtil, Version=0.2.0.0, Culture=neutral, PublicKeyToken=d3c42c4bfacf7596, processorArchitecture=MSIL">
+      <HintPath>..\packages\JonSkeet.MiscUtil.0.2.0\lib\net35\MiscUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Pages\AppDetails.xaml.cs">
+      <DependentUpon>AppDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DownloadsAndUpdates.xaml.cs">
+      <DependentUpon>DownloadsAndUpdates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TopAppWrapped.xaml.cs">
+      <DependentUpon>TopAppWrapped.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnApp.xaml.cs">
+      <DependentUpon>AnApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\AReview.xaml.cs">
+      <DependentUpon>AReview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Overview.xaml.cs">
+      <DependentUpon>Overview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Related.xaml.cs">
+      <DependentUpon>Related.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\Reviews.xaml.cs">
+      <DependentUpon>Reviews.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTabContent\SystemRequirement.xaml.cs">
+      <DependentUpon>SystemRequirement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppDetailsTitleAndBackground.xaml.cs">
+      <DependentUpon>AppDetailsTitleAndBackground.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AppsViewer.xaml.cs">
+      <DependentUpon>AppsViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\AllOwned.xaml.cs">
+      <DependentUpon>AllOwned.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerManuAppList.xaml.cs">
+      <DependentUpon>HamburgerManuAppList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerManuHeader.xaml.cs">
+      <DependentUpon>HamburgerManuHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml.cs">
+      <DependentUpon>HamburgerMenuApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HeaderRightButtons.xaml.cs">
+      <DependentUpon>HeaderRightButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProductivityTopApps.xaml.cs">
+      <DependentUpon>ProductivityTopApps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TopApps.xaml.cs">
+      <DependentUpon>TopApps.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\AppDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DownloadsAndUpdates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TopAppWrapped.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AnApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\AReview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Overview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Related.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\Reviews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTabContent\SystemRequirement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppDetailsTitleAndBackground.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AppsViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\AllOwned.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerManuAppList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerManuHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HamburgerMenuViews\HamburgerMenuApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\HeaderRightButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProductivityTopApps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TopApps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\001-mail inbox app.png" />
+    <Resource Include="Images\002-speech bubble.png" />
+    <Resource Include="Images\003-telephone.png" />
+    <Resource Include="Images\004-camera.png" />
+    <Resource Include="Images\005-image.png" />
+    <Resource Include="Images\006-weather app.png" />
+    <Resource Include="Images\007-clock.png" />
+    <Resource Include="Images\008-maps.png" />
+    <Resource Include="Images\009-tv app.png" />
+    <Resource Include="Images\010-notes.png" />
+    <Resource Include="Images\011-house.png" />
+    <Resource Include="Images\012-daily health app.png" />
+    <Resource Include="Images\013-news.png" />
+    <Resource Include="Images\014-music.png" />
+    <Resource Include="Images\015-folder.png" />
+    <Resource Include="Images\016-stock exchange app.png" />
+    <Resource Include="Images\017-web browser.png" />
+    <Resource Include="Images\018-calendar.png" />
+    <Resource Include="Images\019-reminders.png" />
+    <Resource Include="Images\020-video calling app.png" />
+    <Resource Include="Images\021-podcast.png" />
+    <Resource Include="Images\022-wallet passes app.png" />
+    <Resource Include="Images\023-app store.png" />
+    <Resource Include="Images\024-books.png" />
+    <Resource Include="Images\025-settings.png" />
+    <Resource Include="Images\026-tips.png" />
+    <Resource Include="Images\027-remote control.png" />
+    <Resource Include="Images\028-voice message app.png" />
+    <Resource Include="Images\029-find my gadget app.png" />
+    <Resource Include="Images\030-shortcut script app.png" />
+    <Resource Include="Images\031-translate.png" />
+    <Resource Include="Images\032-smartwatch app.png" />
+    <Resource Include="Images\033-calculator.png" />
+    <Resource Include="Images\034-music store app.png" />
+    <Resource Include="Images\035-contacts.png" />
+    <Resource Include="Images\036-browser.png" />
+    <Resource Include="Images\037-bank.png" />
+    <Resource Include="Images\038-like.png" />
+    <Resource Include="Images\039-twitter.png" />
+    <Resource Include="Images\040-youtube.png" />
+    <Resource Include="Images\041-whatsapp.png" />
+    <Resource Include="Images\042-transport.png" />
+    <Resource Include="Images\043-streaming tv app.png" />
+    <Resource Include="Images\044-search.png" />
+    <Resource Include="Images\045-instagram.png" />
+    <Resource Include="Images\046-shopping.png" />
+    <Resource Include="Images\047-pin.png" />
+    <Resource Include="Images\048-tiktok.png" />
+    <Resource Include="Images\049-messenger.png" />
+    <Resource Include="Images\050-edition.png" />
+    <Resource Include="Images\051-drive.png" />
+    <Resource Include="Images\052-snapchat.png" />
+    <Resource Include="Images\053-reddit.png" />
+    <Resource Include="Images\054-twitch.png" />
+    <Resource Include="Images\055-spotify.png" />
+    <Resource Include="Images\056-video editing app.png" />
+    <Resource Include="Images\057-music maker app.png" />
+    <Resource Include="Images\058-tinder.png" />
+    <Resource Include="Images\059-slack.png" />
+    <Resource Include="Images\060-telegram.png" />
+    <Resource Include="Images\061-discord.png" />
+    <Resource Include="Images\062-tumblr.png" />
+    <Resource Include="Images\063-slide show app.png" />
+    <Resource Include="Images\064-movies app.png" />
+    <Resource Include="Images\065-pages.png" />
+    <Resource Include="Images\066-spreadsheet app.png" />
+    <Resource Include="Images\067-mortarboard.png" />
+    <Resource Include="Images\068-waze.png" />
+    <Resource Include="Images\069-linkedin.png" />
+    <Resource Include="Images\070-file hosting.png" />
+    <Resource Include="Images\AppResourceIcons\SignIn.png" />
+    <Resource Include="Images\GameIcons\1.png" />
+    <Resource Include="Images\GameIcons\2.png" />
+    <Resource Include="Images\GameIcons\3.png" />
+    <Resource Include="Images\GameIcons\4.png" />
+    <Resource Include="Images\GameIcons\5.png" />
+    <Resource Include="Images\GameIcons\6.png" />
+    <Resource Include="Images\GameIcons\7.png" />
+    <Resource Include="Images\GameIcons\8.png" />
+    <Resource Include="Images\GameIcons\GameWideBackgroundIcons\AngryBirdsWBckg.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\001-computer - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\001-computer.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\002-video game - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\002-video game.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\003-palm tree - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\003-palm tree.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\004-dinosaur - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\004-dinosaur.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\005-cassette - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\005-cassette.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\006-game controller - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\006-game controller.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\007-turntable - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\007-turntable.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\008-sneaker - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\008-sneaker.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\009-flamingo - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\009-flamingo.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\010-carnival mask - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\010-carnival mask.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\011-vcr - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\011-vcr.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\012-ice pop - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\012-ice pop.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\013-rainbow - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\013-rainbow.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\014-hair spray - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\014-hair spray.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\015-pager - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\015-pager.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\016-lipstick - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\016-lipstick.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\017-joystick - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\017-joystick.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\018-earrings - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\018-earrings.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\019-phone - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\019-phone.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\020-cassette recorder - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\020-cassette recorder.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\021-ice cream cone - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\021-ice cream cone.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\022-3d glasses - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\022-3d glasses.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\023-waist pack - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\023-waist pack.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\024-shorts - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\024-shorts.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\025-magnetic - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\025-magnetic.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\026-radio - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\026-radio.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\027-candy - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\027-candy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\028-arcade machine - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\028-arcade machine.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\029-lollipop - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\029-lollipop.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\030-Soft drink - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\030-Soft drink.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\031-sunglasses - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\031-sunglasses.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\032-lava lamp - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\032-lava lamp.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\033-camera - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\033-camera.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\034-disco ball - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\034-disco ball.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\035-90s - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\035-90s.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\036-videotape - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\036-videotape.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\037-film roll - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\037-film roll.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\038-earrings - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\038-earrings.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\039-lp disc - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\039-lp disc.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\040-tv - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\040-tv.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\041-floppy disk - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\041-floppy disk.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\042-boombox - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\042-boombox.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\043-rollers - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\043-rollers.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\044-cassette player - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\044-cassette player.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\045-skateboard - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\045-skateboard.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\046-camper van - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\046-camper van.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\047-wristwatch - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\047-wristwatch.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\048-cellphone - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\048-cellphone.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\049-80s - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\049-80s.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\050-diamond - Copy.png" />
+    <Resource Include="Images\GameIcons\stockGameIcons\050-diamond.png" />
+    <Resource Include="Images\MiniIcons\BubbleWitch.png" />
+    <Resource Include="Images\MiniIcons\CandyCFriends.png" />
+    <Resource Include="Images\MiniIcons\CandyCrush.png" />
+    <Resource Include="Images\MiniIcons\CandyCSoda.png" />
+    <Resource Include="Images\MiniIcons\Intel.png" />
+    <Resource Include="Images\MiniIcons\Muse.png" />
+    <Resource Include="Images\MiniIcons\PDFMerger.png" />
+    <Resource Include="Images\MiniIcons\Spotify.png" />
+    <Resource Include="Images\MiniIcons\TextToSpeech.png" />
+    <Resource Include="Images\MiniIcons\Twitter.png" />
+    <Resource Include="Images\ProductivityAppIcons\ACDSee.png" />
+    <Resource Include="Images\ProductivityAppIcons\DrawboardPDF.png" />
+    <Resource Include="Images\ProductivityAppIcons\HotspotShield.png" />
+    <Resource Include="Images\ProductivityAppIcons\Photoshop.png" />
+    <Resource Include="Images\ProductivityAppIcons\PicsArt.png" />
+    <Resource Include="Images\ProductivityAppIcons\YourPhone.png" />
+    <Resource Include="Images\topapp1.png" />
+    <Resource Include="Images\topappsmall1.png" />
+    <Resource Include="Images\topappsmall2.png" />
+    <Resource Include="Images\topappsmall3.png" />
+    <Resource Include="Images\topappsmall4.png" />
+    <Resource Include="Images\ZoomIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TopAppIcons\images1.png" />
+    <Resource Include="Images\TopAppIcons\images2.png" />
+    <Resource Include="Images\TopAppIcons\images3.png" />
+    <Resource Include="Images\TopAppIcons\images4.png" />
+    <Resource Include="Images\TopAppIcons\images5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppdetailIcons\BackgroundImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AppdetailIcons\coffee.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

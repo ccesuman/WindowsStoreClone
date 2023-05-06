@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="WindowsStoreClone.UserControls.HeaderRightButtons"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             xmlns:local="clr-namespace:WindowsStoreClone.UserControls"
+             mc:Ignorable="d" 
+             Name="HeaderRightButtonUserControl"
+             d:DesignHeight="40" d:DesignWidth="200"
+             Height="40">
+    <StackPanel  
+        Orientation="Horizontal"
+        HorizontalAlignment="Right"
+        >
+        <Grid Name="SearchMenuItemHeader" VerticalAlignment="Center">
+            <Button Visibility="Visible"
+                    Height="40"
+                    Width="80"
+                    x:Name="SearchButton"
+                    Click="SearchButton_Click"
+                    Content="Search"
+                    />
+            <TextBox Name="SearchTextBox"
+                     Visibility="Collapsed"
+                     Width="230"
+                     Margin="2,2,2,2"
+                     mah:TextBoxHelper.ButtonCommand="{Binding TextBoxButtonCmd,Mode=OneWay}"
+                     mah:TextBoxHelper.ClearTextButton="True"
+                     mah:TextBoxHelper.UseFloatingWatermark="True"
+                     mah:TextBoxHelper.Watermark="Search..."
+                     >
+                
+            </TextBox>
+        </Grid>
+        <Menu Name="SignInMenu">
+            <MenuItem Height="40" Width="48" x:Name="SignInButton">
+                <MenuItem.Header>
+                    <Label VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Content="👤"
+                           />
+                </MenuItem.Header>
+                <MenuItem Header="Sing In"></MenuItem>
+                <MenuItem Header="Add work of school account"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button Name="DownloadButton"
+                Height="40" Width="35"
+                Click="DownloadButton_Click"
+                >
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               FontSize="15"
+               Content="⬇️"
+               />
+        </Button>
+        <Menu Name="DotDotDotMenu">
+            <MenuItem Height="40" Width="35" x:Name="DotDotDot">
+                <MenuItem.Header>
+                    <Label VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Content="..."
+                           />
+                </MenuItem.Header>
+                <MenuItem Header="Downloads and updates" Click="DownloadsAndUpdateItem_Click"></MenuItem>
+                <MenuItem Header="Settings"></MenuItem>
+                <MenuItem Header="My Library"></MenuItem>
+                <MenuItem Header="Send feedback"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+    </StackPanel>
+</UserControl>
